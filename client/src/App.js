@@ -1,0 +1,28 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import GlobalProvider from './utils/GlobalContext';
+// import Homepage from './pages/Homepage';
+import Search from './pages/Search/AddTodo';
+import Saved from './pages/Saved/ViewTodos';
+import Navbar from './components/Navbar';
+
+function App() {
+  return (
+    <Router>
+      <GlobalProvider>
+        <Navbar />
+
+        <div className="App">
+          <Switch>
+            {/* <Route exact path='/' component={Homepage} /> */}
+            <Route exact path='/' component={Saved} />
+            <Route exact path='/search' component={Search} />
+          </Switch>
+        </div>
+      </GlobalProvider>
+    </Router>
+  );
+}
+
+
+export default App;
