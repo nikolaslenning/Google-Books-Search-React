@@ -15,8 +15,8 @@ function App() {
         <div className="App">
           <Switch>
             {/* <Route exact path='/' component={Homepage} /> */}
-            <Route exact path='/' component={Saved} />
-            <Route exact path='/search' component={Search} />
+            <Route exact path='/saved' component={Saved} />
+            <Route exact path='/' component={Search} />
           </Switch>
         </div>
       </GlobalProvider>

@@ -20,7 +20,11 @@ router
 
     Book
       .create({
-        text: req.body.text
+        title: req.body.title,
+        authors: req.body.authors,
+        description: req.body.description,
+        image: req.body.image,
+        link: req.body.link
       })
       .then(data => {
         res.json({ success: true, data });
