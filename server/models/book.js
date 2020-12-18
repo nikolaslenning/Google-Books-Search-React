@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const BookSchema = new mongoose.Schema({
   // set up properties for a Book
-  title: {
+  title: [{
     type: String,
     required: true
-  },
+  }],
   authors: {
     type: Array,
     required: true
