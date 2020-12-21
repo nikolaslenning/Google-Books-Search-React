@@ -41,9 +41,10 @@ function BookContainer() {
         handleInputChange={handleInputChange}
         handleFormSubmit={handleFormSubmit}
       />
-      {result==='' ? (<BookDetail
-        title={result[0].volumeInfo.title}        
-      />) : (<div>No result</div>)}
+      <BookDetail results={result}/>
+      {/* {result==='' ? (<BookDetail
+        title={result.volumeInfo}        
+      />) : (<div>No result</div>)} */}
        
     </>
 
