@@ -19,18 +19,20 @@ router
     console.log({ reqBody: req.body });
 
     Book
-      .create({
+      .create(
+        {
         title: req.body.title,
         authors: req.body.authors,
         description: req.body.description,
         image: req.body.image,
         link: req.body.link
-      })
+      }
+      )
       .then(data => {
         res.json({ success: true, data });
       })
       .catch(err => {
-        res.json({ success: false });
+        res.json({ success: false, err });
       });
   });
 
@@ -44,10 +46,10 @@ router
     Book
       .findByIdAndDelete(req.params.id)
       .then(data => {
-        res.json({ success: true });
+        res.json({ success: true, data });
       })
       .catch(err => {
-        res.json({ success: false });
+        res.json({ success: false, err });
       });
   });
 

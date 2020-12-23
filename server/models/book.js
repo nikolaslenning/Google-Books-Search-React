@@ -4,23 +4,20 @@ const BookSchema = new mongoose.Schema({
   // set up properties for a Book
   title: [{
     type: String,
-    required: true
+    // required: true
   }],
   authors: {
     type: Array,
-    required: true
   },
   description: {
     type: String,
-    required: true
   },
   image: {
     type: String,
-    required: true
   },
   link: {
     type: String,
-    required: true
+    // required: true
   },
 //   date: {
 //     type: Date,

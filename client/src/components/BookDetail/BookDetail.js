@@ -1,35 +1,48 @@
 import React from "react";
 
-// function BookDetail(props) {
-//   return (
-//     <div className="text-center">
-//       <h3>{props.title}</h3>
-//     </div>
-//   );
-// }
+function BookInfo(props) {
 
-// export default BookDetail;
+  function onClick(e) {
+    e.preventDefault();
+
+    fetch('/api/book', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'x-www-form-urlencoded',
+      },
+      body: JSON.stringify({
+        title: props.volumeInfo.title,
+        authors: props.volumeInfo.authors,
+        description: props.volumeInfo.description,
+        image: props.volumeInfo.imageLinks ? props.volumeInfo.imageLinks.thumbnail : null,
+        link: props.volumeInfo.infoLink,
+      })
+    }).then(res => res.json())
+      .then(res => console.log(res));
+  }
+
+  return (
+    <li key={props.accessInfo.id}>
+      <h2>{props.volumeInfo.title}</h2>
+      <h3>{props.volumeInfo.authors}</h3>
+      <p>{props.volumeInfo.description}</p>
+      <img src={props.volumeInfo.imageLinks ? props.volumeInfo.imageLinks.thumbnail : null} alt={props.volumeInfo.title} />
+      <a href={props.volumeInfo.infoLink} target="_blank" rel="noreferrer" >Book Info</a>
+      <button onClick={onClick}>Save</button>
+    </li>
+  )
+}
 
 function BookDetail(props) {
   return (
-    <ul className="list-group search-results">
-      {
-      // console.log(props.results[0].volumeInfo),
-      props.results.map(result => (
-         
-        // console.log({...result.volumeInfo}),
-
-        <li key={result.accessInfo.id} className="list-group-item">
-          <img alt="Book Cover" src={result.volumeInfo.imageLinks ? result.volumeInfo.imageLinks.thumbnail : null } className="img-fluid" />
-          <h1>Title: {result.volumeInfo.title}</h1>
-          <h2>Author: {result.volumeInfo.authors}</h2>
-          <div>Description: {result.volumeInfo.description}</div>
-          <h3>Link: <a href={result.volumeInfo.infoLinks}>Google Books</a></h3> 
-        </li>
-      ))}
+    console.log({ ...props.results }),
+    <ul className="" >
+      {props.results.map(result => (
+          <BookInfo {...result} />
+        ))}
     </ul>
   );
 }
 
 export default BookDetail;
-// [9].volumeInfo.imageLinks.smallThumbnail
