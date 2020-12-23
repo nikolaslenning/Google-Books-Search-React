@@ -23,11 +23,11 @@ function BookInfo(props) {
   }
 
   return (
-    <li key={props.accessInfo.id}>
+    <li>
       <h2>{props.volumeInfo.title}</h2>
       <h3>{props.volumeInfo.authors}</h3>
-      <p>{props.volumeInfo.description}</p>
       <img src={props.volumeInfo.imageLinks ? props.volumeInfo.imageLinks.thumbnail : null} alt={props.volumeInfo.title} />
+      <p>{props.volumeInfo.description}</p>
       <a href={props.volumeInfo.infoLink} target="_blank" rel="noreferrer" >Book Info</a>
       <button onClick={onClick}>Save</button>
     </li>
@@ -39,7 +39,7 @@ function BookDetail(props) {
     console.log({ ...props.results }),
     <ul className="" >
       {props.results.map(result => (
-          <BookInfo {...result} />
+          <BookInfo key={result.id} {...result} />
         ))}
     </ul>
   );

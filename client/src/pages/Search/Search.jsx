@@ -31,16 +31,7 @@ const AddTodo = () => {
   return (
     <div>
       <BooksContainer/>
-      {/* <h3>Add a new todo!</h3>
-      <form onSubmit={addTodo}>
-        <input
-          type="text"
-          name="todo"
-          value={todoValue}
-          onChange={(e) => setTodoValue(e.target.value)}
-        />
-        <button>Add Todo</button>
-      </form> */}
+     
     </div>
   );
 };

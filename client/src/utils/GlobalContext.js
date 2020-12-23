@@ -5,16 +5,16 @@ export const GlobalContext = createContext();
 
 // set up Global Provider & reducer
 const defaultState = {
-  todos: []
+  books: []
 };
 
 const reducer = (state, action) => {
   console.log({action});
   switch(action.type) {
-    case 'setTodos':
+    case 'setBooks':
       return {
         ...state,
-        todos: action.payload
+        books: action.payload
       };
     default:
       return state;
