@@ -1,5 +1,7 @@
 .card {
     margin-bottom: 1.5rem;
+    border-color: #52057B;
+    border-width: 6px;
 }
 
 .card-header {
