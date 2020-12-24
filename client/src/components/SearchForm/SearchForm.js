@@ -4,14 +4,14 @@ function SearchForm(props) {
   return (
     <form>
       <div className="form-group">
-        <label htmlFor="search">Search:</label>
+        <label htmlFor="search">Search Books:</label>
         <input
           onChange={props.handleInputChange}
           value={props.value}
           name="search"
           type="text"
           className="form-control"
-          placeholder="Search For a Movie"
+          placeholder="Search For a Book"
           id="search"
         />
         <br />

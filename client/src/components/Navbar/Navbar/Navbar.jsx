@@ -6,24 +6,19 @@ const Navbar = () => {
   return (
     <nav className="Navbar">
       <div className="Navbar-brand">
-        <span>Google Books</span>
+        <span>Google Books Search</span>
       </div>
 
       <ul className="Navbar-links">
-        {/* <li className="Navbar-link">
-          <Link to="/">
-            Homepage
-          </Link>
-        </li> */}
-
+        
         <li className="Navbar-link">
-          <Link to="/">
+          <Link className="link" to="/">
             Search
           </Link>
         </li>
 
         <li className="Navbar-link">
-          <Link to="/saved">
+          <Link className="link" to="/saved">
             Saved
           </Link>
         </li>
