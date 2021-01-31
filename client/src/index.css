@@ -8,3 +8,9 @@
   max-width: 900px;
   margin: 0 auto;
 }
+
+body {
+  background-image: url("./assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+}

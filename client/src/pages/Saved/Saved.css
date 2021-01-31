@@ -1,3 +1,13 @@
 .card {
     margin-bottom: 1.5rem;
 }
+
+body {
+    background-image: url("../../assets/background.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .Todos-header {
+      color: whitesmoke;
+  }
